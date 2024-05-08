@@ -1,0 +1,20 @@
+<div mat-dialog-content>
+    <p *ngIf="data === false" id="w">
+      <mat-icon>sentiment_very_dissatisfied</mat-icon> Incorrect. Give it another try
+      <mat-icon>thumb_down</mat-icon>
+    </p>
+    <p *ngIf="data === true" id="m">
+      <mat-icon>sentiment_very_satisfied</mat-icon> Great Job!
+      <mat-icon>thumb_up</mat-icon>
+    </p>
+  </div>
+  <div class="center" mat-dialog-actions>
+    <button class="btnDialog" *ngIf="data === true" cdkFocusInitial color="primary" mat-button [mat-dialog-close]="true" id="t">
+      CONTINUE
+    </button>
+  
+    <button class="btnDialog" *ngIf="data === false" cdkFocusInitial color="primary" mat-button [mat-dialog-close]="true" id="g">
+      GOT IT
+    </button>
+  </div>
+  

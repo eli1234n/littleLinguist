@@ -1,0 +1,75 @@
+
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(169, 251, 17);
+    border-color: black;
+    border-width: 2px; 
+}
+
+
+
+mat-dialog-content {
+    font-size: 20px;
+    color: #1d941f;
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+#gameSelect {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #e3f20c;
+    margin-bottom: 10px;
+}
+
+mat-dialog-actions button {
+    background-color: #48ff00;
+    color: #d03131;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#D, #A, #Z {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #db0ed4; 
+    margin-bottom: 10px;
+}
+
+#p:hover{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(27, 235, 51);
+  background-color: rgb(14, 157, 209);
+}
+
+#M {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #e4800d;
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 2px 2px 4px #96ef7f; 
+  }
+  
+
+  #M::before {
+    content: "\1F3AE";
+    display: inline-block; 
+    font-size: 24px;
+    margin-right: 10px; 
+  }

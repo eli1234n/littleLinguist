@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+mat-dialog-content {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+mat-dialog-actions button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+mat-dialog-actions button:hover {
+  background-color: #ade727;
+}
+
+#E:hover{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(39, 36, 37);
+  background-color: rgb(230, 20, 20);
+}
+#C:hover{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(39, 36, 37);
+  background-color: rgb(20, 230, 66);
+}
+
+#L {
+  text-align: center;
+  font-size: 28px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #cd25e3;
+  text-shadow: 8px 6px 6px rgba(224, 27, 96, 0.326); /* הוספת צל טקסט */
+  margin-bottom: 20px;
+}

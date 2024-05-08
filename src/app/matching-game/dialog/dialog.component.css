@@ -1,0 +1,37 @@
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+
+#t {
+  background-color: #16bfd5; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white; 
+}
+
+#g {
+  background-color: #af2a64;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white; 
+}
+
+#t:hover{
+  background-color: rgb(28, 231, 28);
+}
+
+#g:hover{
+  background-color: #f44336;
+}
+
+
+#m{
+ 
+  color: rgb(31, 219, 21);
+  
+}
+
+#w {
+ 
+  color: rgb(207, 25, 25); 
+}

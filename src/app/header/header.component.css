@@ -1,0 +1,46 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#l {
+  text-align: center;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #1abad6; 
+  color: rgb(213, 35, 154);
+  padding: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#l button {
+  color: rgb(217, 16, 96);
+}
+
+#l span {
+  font-size: 24px;
+  font-weight: bold; 
+}
+
+
+#a:hover {
+  background-color: #e657d0;
+}
+
+
+ #a {
+  color: #0bed16;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#s:hover {
+  background-color: #1ad8ac;
+}
+
+
+ #s {
+  color: #4f0bed;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

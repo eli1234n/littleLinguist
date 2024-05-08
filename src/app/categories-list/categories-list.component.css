@@ -1,0 +1,42 @@
+.add-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+table.mat-table {
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+.mat-table td, .mat-table th {
+  padding: 12px; 
+  text-align: left;
+  border-bottom: 1px solid #bcbc17;
+}
+
+.mat-table th {
+  background-color: #f2f2f2;
+}
+
+.add-button-container {
+  display: flex; 
+  justify-content: flex-end; 
+  margin-top: 20px;
+}
+
+.add-button-container button.mat-fab-button {
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;
+  border-radius: 50%; 
+  padding: 16px 20px;
+  font-size: 24px; 
+  cursor: pointer; 
+  transition: background-color 0.5s; 
+}
+
+.add-button-container button.mat-fab-button:hover {
+  background-color: #10e01b; 
+}

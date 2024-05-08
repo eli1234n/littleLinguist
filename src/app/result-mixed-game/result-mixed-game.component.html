@@ -1,0 +1,21 @@
+<div class="main">
+  <h1 class="title" id="r">Mixed Letters - {{gameDetails.name}} - Results</h1>
+  <div class="title">
+    <p id="q">Your score: {{gameDetails.currentPoint.toFixed(0)}}</p>
+    <p id="w">You translated {{gameDetails.successesCount}} out of {{gameDetails.attemptsCount}} words correctly</p>
+  </div>
+  <table>
+    <tbody>
+      <tr *ngFor="let word of gameDetails.currentCards">
+        <td id="h">Origin:{{ word.origin }}</td>
+        <td id="d">Target:{{ word.target }}</td>
+        <td>
+          <mat-icon *ngIf="word.guess === 'false'" id="g">clear</mat-icon>
+          <mat-icon *ngIf="word.guess !== 'false'" id="k">check</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ 
+    <button [routerLink]="['/choose']" id="c">New Game</button>
+  </div>

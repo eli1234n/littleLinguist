@@ -1,0 +1,10 @@
+<mat-card (click)="openDialog()" class="card-container">
+   <mat-card-title>
+ {{ currentcategory?.name }}
+ </mat-card-title>
+ <mat-card-content>
+ <div>
+    {{currentcategory?.words?.length}} Words
+ </div>
+ </mat-card-content>
+</mat-card>

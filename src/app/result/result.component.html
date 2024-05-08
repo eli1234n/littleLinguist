@@ -1,0 +1,10 @@
+<h2>{{ gameDetails.name }}</h2>
+    <p id="j">Your score: {{ gameDetails.currentPoint  }}</p>
+    <p>{{ (gameDetails.successesCount / gameDetails.attemptsCount * 100).toFixed(0) || 0 }}% {{ gradeStatus.toString() }}</p>
+  <body id="p">
+      <tr *ngFor="let word of gameDetails.currentCards">
+        <td id="x">{{ word.origin }}</td>
+        <td id="z">{{ word.target }}</td>
+      </tr>
+    </body>
+    <button [routerLink]="['/choose']" id="b">New Game</button>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+mat-icon {
+  font-size: 24px; 
+  color: #2d16dd; 
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+mat-icon:hover {
+  color: #db2017; 
+}
+

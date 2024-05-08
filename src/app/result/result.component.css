@@ -1,0 +1,101 @@
+#j {
+  font-size: 30px;
+  font-weight: bold; 
+  color: #520fd9; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#j:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(138, 14, 192, 0.639);
+  background-color: #12d77b;
+}
+
+h2 {
+  font-size: 35px; 
+  font-weight: bold; 
+  text-align: center; 
+  margin-bottom: 20px; 
+ color: #e50935;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+h2:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(11, 227, 7, 0.639);
+  background-color: #d9cf0f;
+}
+
+p {
+  font-size: 23px; 
+  color: #d20e2f; 
+  margin-bottom: 10px; 
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+td {
+  padding: 5px 10px; 
+}
+
+#b {
+  display: block; 
+  width: 200px;
+  margin: 20px auto; 
+  padding: 10px 20px; 
+  background-color: #1ed627;
+  color: #f2e8e8;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 25px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#b:hover {
+  background-color: #3012d7; 
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(227, 117, 7, 0.639);
+}
+
+#x{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+  color: #520fd9;
+  text-align: center;
+  border: 1px solid #e80e0e;
+  border-radius: 5px;
+  background-color: gold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+#x:hover, #z:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(20, 218, 40, 0.639);
+}
+
+ #z {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #e5a709;
+  border-radius: 5px;
+  background-color: #beeb08;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  color: #ea0c6c;
+  
+}
+
+:host {
+  display: block;
+}
+table{
+  width: 100%;
+}
+td{
+  text-align: center;
+}

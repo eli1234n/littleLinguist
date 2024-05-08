@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+   }
+   .categoty-card {
+    margin: 8px;
+   }
+
+
+   .card-container {
+    width: 200px; 
+    height: 150px;
+    background-color: #cae117;
+    box-shadow: 0 2px 5px rgba(217, 11, 152, 0.1);
+    border-radius: 4px;
+    cursor: pointer; 
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-card-title {
+    font-weight: bold;
+    font-size: 35px;
+    color: #510bea; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+
+  mat-card-content div {
+    font-size: 25px;
+    color: #cea006;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

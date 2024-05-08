@@ -1,0 +1,23 @@
+.footer-container {
+  display: flex;
+  justify-content: right;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+.footer-container div {
+  cursor: pointer;
+  margin-left: 20px;
+  color: aqua;
+}
+
+.footer-container div mat-icon {
+  font-size: 24px;
+  color: #c818dc; 
+}
