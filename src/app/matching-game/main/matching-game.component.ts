@@ -11,13 +11,14 @@ import { WordComponent } from '../word/word.component';
 import { DialogComponent } from '../dialog/dialog.component';
 import { PointsService } from '../../../../src/app/services/points-service';
 import { GamePoint } from '../../../shared/model/game-points';
+import { TimerComponent } from '../../timer/timer.component';
 
 
 
 @Component({
   selector: 'app-matching-game',
   standalone: true,
-  imports: [WordComponent,CommonModule,MatIconModule,DialogComponent],
+  imports: [WordComponent,CommonModule,MatIconModule,DialogComponent,TimerComponent],
   templateUrl: './matching-game.component.html',
   styleUrl: './matching-game.component.css',
 })
@@ -82,7 +83,7 @@ export class MatchingGameComponent {
     if (statusArray[i] === WordStatus.NORMAL) {
       statusArray[i] = WordStatus.SELECTED;
       
-      // Reset other selected card of the same category
+     
       for (let j = 0; j < statusArray.length; j++) {
         if (i !== j && statusArray[j] === WordStatus.SELECTED) {
           statusArray[j] = WordStatus.NORMAL;
@@ -90,7 +91,7 @@ export class MatchingGameComponent {
         }
       }
   
-      // Check for match with selected card of the opposite category
+    
       for (let j = 0; j < oppositeStatusArray.length; j++) {
         if (oppositeStatusArray[j] === WordStatus.SELECTED) {
           const check = isOrigin ? this.currentCards.find(card => card.target === this.shuffleTarget[j]) : this.currentCards[j];

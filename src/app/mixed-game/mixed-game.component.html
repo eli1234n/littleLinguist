@@ -1,9 +1,16 @@
-<div class="main" id="n">
+ <div class="main" id="n">
     <h1 class="title" id="b">Mixed Letter - {{currentCategory.name}}</h1>
+
+    <div>
+        <app-timer [totalDuration]="180" id="q"></app-timer>
+       </div><mat-icon id="k">timer</mat-icon>
+
+
     <p class="minimize-margin" id="v"> {{target}} </p>
     <p>
         <span *ngFor="let letter of origin" id="c">{{ letter }} </span>
     </p>
+    
     <div>
         <span id="x">Guess:</span> <input [value]="inputValue" (change)="handleChange($event)" type="text">
     </div>
@@ -16,3 +23,5 @@
         <mat-progress-bar mode="determinate" [value]="calculateProgress()" id="s"></mat-progress-bar>
     </div>
 </div>
+
+ 

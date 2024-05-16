@@ -18,7 +18,16 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
-  
+  #q{
+    color: #de8212;
+    background-color: #56de12;
+  }
+
+  #k{
+    color: #de8212;
+    background-color: #56de12;
+  }
+
   .minimize-margin {
     margin-bottom: 5px; 
     color: rgb(218, 17, 236);

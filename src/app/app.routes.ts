@@ -8,6 +8,7 @@ import { HelpComponentComponent } from './help-component/help-component.componen
 import { ResultComponent } from './result/result.component';
 import { ResultMixedGameComponent } from './result-mixed-game/result-mixed-game.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TimerComponent } from './timer/timer.component';
 
 export const routes: Routes = [
     {path: "dashboard", component: DashboardComponent},
@@ -19,7 +20,8 @@ export const routes: Routes = [
     {path: "mixed", component: MixedGameComponent},
     {path: "help", component: HelpComponentComponent}, 
     {path: "result", component: ResultComponent}, 
-    {path: "resultmixedgame", component: ResultMixedGameComponent}
+    {path: "resultmixedgame", component: ResultMixedGameComponent},
+    {path: "timer", component: TimerComponent}
 
     
 

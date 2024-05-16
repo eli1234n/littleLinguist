@@ -8,11 +8,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
 import { GamePoint } from '../../shared/model/game-points';
 import { MatIconModule } from '@angular/material/icon';
+import { TimerComponent } from '../timer/timer.component';
 
 @Component({
   selector: 'app-mixed-game',
   standalone: true,
-  imports: [CommonModule,MatProgressBarModule,MatIconModule],
+  imports: [CommonModule,MatProgressBarModule,MatIconModule,TimerComponent],
   templateUrl: './mixed-game.component.html',
   styleUrl: './mixed-game.component.css'
 })

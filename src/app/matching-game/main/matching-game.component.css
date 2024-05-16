@@ -13,6 +13,15 @@
   
   
 }
+#q{
+  color: #de8212;
+  background-color: #56de12;
+}
+
+#k{
+  color: #de8212;
+  background-color: #56de12;
+}
 
 .left.column {
   display: flex;
