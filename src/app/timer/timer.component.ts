@@ -23,7 +23,7 @@ export class TimerComponent implements OnInit, OnDestroy{
   private timer?: any;
 
   @Output()
-  timeLeft = new EventEmitter<number>();
+  reportTimeLeft = new EventEmitter<number>();
 
   @Input()
   totalDuration = 0;
@@ -36,7 +36,7 @@ export class TimerComponent implements OnInit, OnDestroy{
   }
   changeDuration() {
     --this.currentDuration;
-    this.timeLeft.emit(this.currentDuration)
+    this.reportTimeLeft.emit(this.currentDuration)
     if(
       this.currentDuration == 0
     ){

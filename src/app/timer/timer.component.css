@@ -1,3 +1,38 @@
-:host {
-  display: block;
+
+
+body {
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
+
+#t {
+    position: relative;
+    padding: 20px 40px;
+    background: linear-gradient(145deg, #3a3f47, #434a53);
+    box-shadow: 8px 8px 15px #2162b8, -8px -8px 15px #4a515c;
+    border-radius: 12px;
+    font-size: 24px;
+    text-align: center;
+    color: #61dafb;
+    animation: pulse 2s infinite;
+}
+
+#t::before {
+    content: "\f254";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    color: #88c0d0;
+    animation: rotate 5s linear infinite;
+}
+
+

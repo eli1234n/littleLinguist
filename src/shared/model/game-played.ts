@@ -3,6 +3,8 @@ export class GamePlayed {
       public categoryId: number,
       public gameId: number,
       public date: Date,
-      public points: number
+      public points: number,
+      public secondsLeftInGame:number,
+      public secondsPlayed :number
     ) {}
   }

@@ -45,10 +45,10 @@
 
 .category-card {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: #da1a846c;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(18, 229, 11, 0.1);
   cursor: pointer;
   color: rgb(212, 131, 17);
 }
@@ -70,4 +70,66 @@ app-word {
 
 .category-card:hover{
   background-color: rgb(241, 250, 215);
+}
+
+body {
+  background-color: #1147b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+#k {
+  font-size: 48px;
+  color: #88c0d0;
+  animation: rotate 5s linear infinite;
+  margin-right: 20px;
+}
+
+#q {
+  font-size: 24px;
+  color: #3513e1;
+  font-weight: bold;
+  position: relative;
+}
+
+
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+#o{
+  background-color: #e113b1;
 }
