@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { GamePoint } from '../../shared/model/game-points';
 import { MatIconModule } from '@angular/material/icon';
 import { TimerComponent } from '../timer/timer.component';
+import { PointsService } from '../services/points-service';
+import { GamePlayed } from '../../shared/model/game-played';
 
 @Component({
   selector: 'app-mixed-game',
@@ -19,7 +21,7 @@ import { TimerComponent } from '../timer/timer.component';
 })
 export class MixedGameComponent {
   
-  constructor(private dialogService : MatDialog,private router:Router){}
+  constructor(private dialogService : MatDialog,private router:Router , private pointService : PointsService){}
   
   currentCategory:Category=new Category(0,'',Language.English,Language.Hebrew);
   level:number = 0
@@ -28,9 +30,11 @@ export class MixedGameComponent {
   inputValue:string = ''
 
 
-  currentPoint:number = 100
+  currentPoint:number = 0
   attemptsCount:number=0
   successesCount:number=0
+
+  timeLeft : number =0
 
 
   ngOnInit(): void {
@@ -53,12 +57,12 @@ export class MixedGameComponent {
         this.currentCategory.words[this.level].guess = 'true'
         this.successesCount += 1
         this.attemptsCount += 1
+        this.currentPoint += (100 / this.currentCategory.words.length)
       }
       else{
         this.dialogService.open(DialogComponent,{data:false});
         this.currentCategory.words[this.level].guess = 'false'
         this.attemptsCount += 1
-        this.currentPoint -= (100 / this.currentCategory.words.length)
         
       }
       this.resetValue()
@@ -70,6 +74,15 @@ export class MixedGameComponent {
       else{
         const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPoint,this.currentCategory.words,this.attemptsCount,this.successesCount)
         localStorage.setItem("gameResult",JSON.stringify(game))
+        this.pointService.addGamePlayed(
+          new GamePlayed(    
+             this.currentCategory.id,
+             3,
+             new Date(),
+             this.currentPoint,
+             this.timeLeft,
+             180 - this.timeLeft
+          ))
         this.router.navigate(['resultmixedgame'])
       }
       this.level+=1
@@ -111,6 +124,23 @@ export class MixedGameComponent {
     return progress;
   }
 
-  
+  reportTimeLeft(newTime : number){
+    this.timeLeft = newTime 
+    if(newTime == 0){
+      console.log("points when time is over " + this.currentPoint)
+      const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPoint,this.currentCategory.words,this.attemptsCount,this.successesCount)
+      localStorage.setItem("gameResult",JSON.stringify(game))
+      this.pointService.addGamePlayed(
+        new GamePlayed(    
+           this.currentCategory.id,
+           3,
+           new Date(),
+           this.currentPoint,
+           0,
+           180
+        ))
+      this.router.navigate(['resultmixedgame'])
+    }
+  }
 
 }

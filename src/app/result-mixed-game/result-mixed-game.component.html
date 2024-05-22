@@ -10,8 +10,8 @@
         <td id="h">Origin:{{ word.origin }}</td>
         <td id="d">Target:{{ word.target }}</td>
         <td>
-          <mat-icon *ngIf="word.guess === 'false'" id="g">clear</mat-icon>
-          <mat-icon *ngIf="word.guess !== 'false'" id="k">check</mat-icon>
+          <mat-icon *ngIf="word.guess === 'false' || word.guess === ''" id="g">clear</mat-icon>
+          <mat-icon *ngIf="word.guess !== 'false' &&  word.guess !== ''" id="k">check</mat-icon>
         </td>
       </tr>
     </tbody>
