@@ -37,9 +37,11 @@ export class MatchingGameComponent {
   currentPointsCount = 0;
   pointsForCurrentRoundCount = 0;
 
-  constructor(private dialogService: MatDialog, private router: Router) {
+  constructor(private dialogService: MatDialog, private router: Router,private pointService : PointsService) {
     this.initGame();
   }
+
+   timeLeft : number =0
 
   initGame(): void {
     this.pointsForCurrentRoundCount = 100;

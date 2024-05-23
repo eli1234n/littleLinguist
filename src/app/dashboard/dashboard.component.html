@@ -1,13 +1,40 @@
-<div>
-    <h1>
-        You're learning:
-    </h1>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
     <div>
-        {{dashboardDetails.gamesCounter}}
-       Points
+        <h1 id="y">
+            You're learning: <i class="fas fa-gamepad icon icon-rotate icon-gamepad"></i>
+        </h1>
+        <div id="a">
+            <i class="fas fa-star icon icon-star"></i>
+            {{dashboardDetails.gamesCounter}} Points
+        </div>
+        <div id="z">
+            <i class="fas fa-trophy icon icon-trophy"></i>
+            {{dashboardDetails.pointCounter}} Games    
+        </div>
+        <h1></h1>
+        <button [routerLink]="['/choose']" id="b">New Game</button>
+       <i class="fas fa-dice icon icon-dice"></i>
+        
     </div>
-    <div>
-        {{dashboardDetails.pointCounter}}
-        Games    
-    </div>
-</div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+</body>
