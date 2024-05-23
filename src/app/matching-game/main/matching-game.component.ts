@@ -12,6 +12,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { PointsService } from '../../../../src/app/services/points-service';
 import { GamePoint } from '../../../shared/model/game-points';
 import { TimerComponent } from '../../timer/timer.component';
+import { GamePlayed } from '../../../shared/model/game-played';
 
 
 
@@ -36,6 +37,7 @@ export class MatchingGameComponent {
   successesCount = 0;
   currentPointsCount = 0;
   pointsForCurrentRoundCount = 0;
+  
 
   constructor(private dialogService: MatDialog, private router: Router,private pointService : PointsService) {
     this.initGame();
@@ -138,4 +140,24 @@ export class MatchingGameComponent {
     localStorage.setItem("gameResult", JSON.stringify(game));
     this.router.navigate(['result']);
   }
+
+  reportTimeLeft(newTime : number){
+    this.timeLeft = newTime 
+    if(newTime == 0){
+      console.log("points when time is over " + this.currentPointsCount)
+      const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPointsCount,this.currentCategory.words,this.attemptsCount,this.successesCount)
+      localStorage.setItem("gameResult",JSON.stringify(game))
+      this.pointService.addGamePlayed(
+        new GamePlayed(    
+           this.currentCategory.id,
+           3,
+           new Date(),
+           this.currentPointsCount,
+           0,
+           180
+        ))
+      this.router.navigate(['result'])
+    }
+  }
+
 }

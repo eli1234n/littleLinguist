@@ -52,4 +52,13 @@ export class ResultComponent {
     
   }
 
+  successRate(){
+    if(this.gameDetails.attemptsCount == 0){
+return 0;
+    }else{
+      return(this.gameDetails.successesCount / this.gameDetails.attemptsCount * 100).toFixed(0) || 0 ;
+    }
+    
+  }
+
  }

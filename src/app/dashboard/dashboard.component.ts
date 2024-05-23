@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GameResult } from '../../shared/model/game-result';
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -24,4 +25,5 @@ export class DashboardComponent {
       localStorage.setItem("dashboardResult",JSON.stringify(this.dashboardDetails))
     }    
   }
+  
 }
