@@ -25,5 +25,7 @@ export class DashboardComponent {
       localStorage.setItem("dashboardResult",JSON.stringify(this.dashboardDetails))
     }    
   }
-  
+  longTime(){
+   
+  }
 }

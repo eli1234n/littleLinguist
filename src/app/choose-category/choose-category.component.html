@@ -1,6 +1,13 @@
+<head>
+    <!-- הוספת קישור ל-Font Awesome עבור אייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 <h1 class="center" id="l">Lets play</h1>
 <div class="container">
  <div *ngFor="let c of allCategotys" class="categoty-card">
  <app-category-card [currentcategory]="c"></app-category-card>
  </div>
+ <body>
+    <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
+</body>
 </div>

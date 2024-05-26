@@ -54,5 +54,86 @@
   }
 
 
+#b {
+  display: inline-block;
+  padding: 12px 50px;
+  font-size: 18px;
+  color: #e21ab7;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #ffce78;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 40%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(206, 88, 88, 0.1);
+  text-align: center;
+}
 
 
+#b::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#b:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#b:hover {
+  background-color: #e8ec89;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#b:active {
+  transform: scale(0.95);
+}
+
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+}
+}
+#b {
+  animation: pulse 2s infinite;
+}
+
+
+#b::after {
+  content: '\f0a4'; 
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.3s ease;
+}
+
+#b:hover::after {
+  right: 25px;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

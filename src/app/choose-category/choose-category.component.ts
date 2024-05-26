@@ -3,13 +3,14 @@ import { Category } from '../../shared/model/category';
 import { CategoriesService } from '../services/categories.service';
 import { CommonModule } from '@angular/common';
 import { CategoryCardComponent } from '../category-card/category-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-choose-category',
   templateUrl: './choose-category.component.html',
   styleUrls: ['./choose-category.component.css'],
   standalone: true,
-  imports: [CommonModule, CategoryCardComponent]
+  imports: [CommonModule, CategoryCardComponent,RouterLink]
 })
 export class ChooseCategoryComponent implements OnInit{
 openGameSelectionDialog() {

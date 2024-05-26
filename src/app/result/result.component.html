@@ -1,3 +1,8 @@
+<head>
+  <!-- הוספת קישור ל-Font Awesome עבור אייקונים -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
 <h2>{{ gameDetails.name }}</h2>
     <p id="j">Your score: {{ gameDetails.currentPoint  }}</p>
     <p>{{successRate()}}% {{ gradeStatus.toString() }}</p>
@@ -8,5 +13,5 @@
       </tr>
     </body>
     <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
-    <button [routerLink]="['/choose']" id="b">New Game</button>
+    <button [routerLink]="['/choose']" id="c">New Game</button>
 
