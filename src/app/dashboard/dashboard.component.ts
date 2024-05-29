@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GameResult } from '../../shared/model/game-result';
 import { RouterLink } from '@angular/router';
+import { PointsService } from '../services/points-service';
+import { GamePlayed } from '../../shared/model/game-played';
 
 
 @Component({
@@ -14,18 +16,24 @@ import { RouterLink } from '@angular/router';
   styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardComponent { 
 
-  dashboardDetails:GameResult = new GameResult()
-  ngOnInit(): void {
-    try{
-    this.dashboardDetails= JSON.parse(localStorage.getItem("dashboardResult")||'') as GameResult;
+
+  export class DashboardComponent { 
+    gameCount = 0
+    points = 0
+    averageTime = 0
+    
+    constructor(private pointsService : PointsService ){
+    
     }
-    catch{
-      localStorage.setItem("dashboardResult",JSON.stringify(this.dashboardDetails))
-    }    
-  }
-  longTime(){
-   
-  }
-}
+     
+      ngOnInit(): void {
+     this.pointsService.getGamePoints().then((result : GamePlayed[])=>{
+    this.gameCount = result.length
+    
+     }); 
+      }
+     
+    }
+    
+
