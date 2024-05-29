@@ -23,7 +23,7 @@ export class MixedGameComponent {
   
   constructor(private dialogService : MatDialog,private router:Router , private pointService : PointsService){}
   
-  currentCategory:Category=new Category(0,'',Language.English,Language.Hebrew);
+  currentCategory:Category=new Category('','',Language.English,Language.Hebrew);
   level:number = 0
   origin:string[]=[]
   target:string = ''

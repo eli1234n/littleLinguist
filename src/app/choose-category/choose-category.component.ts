@@ -10,16 +10,16 @@ import { RouterLink } from '@angular/router';
   templateUrl: './choose-category.component.html',
   styleUrls: ['./choose-category.component.css'],
   standalone: true,
-  imports: [CommonModule, CategoryCardComponent,RouterLink]
+  imports: [CommonModule, CategoryCardComponent, RouterLink],
 })
-export class ChooseCategoryComponent implements OnInit{
-openGameSelectionDialog() {
-throw new Error('Method not implemented.');
-}
+export class ChooseCategoryComponent implements OnInit {
+  openGameSelectionDialog() {
+    throw new Error('Method not implemented.');
+  }
 
-   allCategotys : Category[] = [];
- constructor(private categoryService : CategoriesService) {}
- ngOnInit(): void {
- this.allCategotys = this.categoryService.list();
- }
+  allCategotys: Category[] = [];
+  constructor(private categoryService: CategoriesService) {}
+  ngOnInit(): void {
+     this.categoryService.list().then((result: Category[]) => (this.allCategotys = result));;
+  }
 }

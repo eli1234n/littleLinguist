@@ -1,17 +1,18 @@
 <head>
-  <!-- הוספת קישור ל-Font Awesome עבור אייקונים -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 </head>
 
 <h2>{{ gameDetails.name }}</h2>
-    <p id="j">Your score: {{ gameDetails.currentPoint  }}</p>
-    <p>{{successRate()}}% {{ gradeStatus.toString() }}</p>
-  <body id="p">
-      <tr *ngFor="let word of gameDetails.currentCards">
-        <td id="x">{{ word.origin }}</td>
-        <td id="z">{{ word.target }}</td>
-      </tr>
-    </body>
-    <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
-    <button [routerLink]="['/choose']" id="c">New Game</button>
-
+<p id="j">Your score: {{ gameDetails.currentPoint }}</p>
+<p>{{ successRate() }}% {{ gradeStatus.toString() }}</p>
+<body id="p">
+  <tr *ngFor="let word of gameDetails.currentCards">
+    <td id="x">{{ word.origin }}</td>
+    <td id="z">{{ word.target }}</td>
+  </tr>
+</body>
+<button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
+<button [routerLink]="['/choose']" id="c">New Game</button>

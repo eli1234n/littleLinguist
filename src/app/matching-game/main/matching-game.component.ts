@@ -27,7 +27,7 @@ import { GamePlayed } from '../../../shared/model/game-played';
 
 
 export class MatchingGameComponent {
-  currentCategory: Category = new Category(0, '', Language.English, Language.Hebrew);
+  currentCategory: Category = new Category('', '', Language.English, Language.Hebrew);
   currentCards: TranslatedWord[] = [];
   shuffleTarget: string[] = [];
   targets: string[] = [];

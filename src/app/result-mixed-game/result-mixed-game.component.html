@@ -1,8 +1,11 @@
 <div class="main">
-  <h1 class="title" id="r">Mixed Letters - {{gameDetails.name}} - Results</h1>
+  <h1 class="title" id="r">Mixed Letters - {{ gameDetails.name }} - Results</h1>
   <div class="title">
-    <p id="q">Your score: {{gameDetails.currentPoint.toFixed(0)}}</p>
-    <p id="w">You translated {{gameDetails.successesCount}} out of {{gameDetails.attemptsCount}} words correctly</p>
+    <p id="q">Your score: {{ gameDetails.currentPoint.toFixed(0) }}</p>
+    <p id="w">
+      You translated {{ gameDetails.successesCount }} out of
+      {{ gameDetails.attemptsCount }} words correctly
+    </p>
   </div>
   <table>
     <tbody>
@@ -10,19 +13,25 @@
         <td id="h">Origin:{{ word.origin }}</td>
         <td id="d">Target:{{ word.target }}</td>
         <td>
-          <mat-icon *ngIf="word.guess === 'false' || word.guess === ''" id="g">clear</mat-icon>
-          <mat-icon *ngIf="word.guess !== 'false' &&  word.guess !== ''" id="k">check</mat-icon>
+          <mat-icon *ngIf="word.guess === 'false' || word.guess === ''" id="g"
+            >clear</mat-icon
+          >
+          <mat-icon *ngIf="word.guess !== 'false' && word.guess !== ''" id="k"
+            >check</mat-icon
+          >
         </td>
       </tr>
     </tbody>
   </table>
-   
-    <button [routerLink]="['/choose']" id="c">New Game</button>
-    <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <button [routerLink]="['/choose']" id="c">New Game</button>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
-      <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
+    <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
   </body>
-  
-  </div>
+</div>

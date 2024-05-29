@@ -24,7 +24,7 @@ enum grade{
 })
 export class ResultComponent {
 
-  gameDetails:GamePoint=new GamePoint(0,'',0,[],0,0)
+  gameDetails:GamePoint=new GamePoint("0",'',0,[],0,0)
   gradeStatus : grade = grade.Fail
 
   dashboardResultSave(){
