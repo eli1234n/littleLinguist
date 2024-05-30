@@ -1,3 +1,8 @@
+<div *ngIf="!isLaodingDone" id="l">
+  <span>Loading</span>
+</div>
+
+<div>
 <table mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID</th>
@@ -38,4 +43,5 @@
   <button mat-fab color="primary" routerLink="/newcategory">
     <mat-icon>add</mat-icon>
   </button>
+</div>
 </div>

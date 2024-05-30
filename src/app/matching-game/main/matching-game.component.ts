@@ -35,8 +35,7 @@ export class MatchingGameComponent {
   originStatus: WordStatus[] = [WordStatus.NORMAL, WordStatus.NORMAL, WordStatus.NORMAL, WordStatus.NORMAL, WordStatus.NORMAL];
   attemptsCount = 0;
   successesCount = 0;
-  currentPointsCount = 0;
-  pointsForCurrentRoundCount = 0;
+  pointsForCurrentRoundCount = 100;
   
 
   constructor(private dialogService: MatDialog, private router: Router,private pointService : PointsService) {
@@ -52,9 +51,11 @@ export class MatchingGameComponent {
       this.choose5words();
       this.shuffle();
     } else {
-      alert('error');
+      alert('ERROR , choose a game with at least 5 words');
     }
   }
+
+
 
   choose5words(): void {
     let choose: TranslatedWord[] = [];
@@ -138,21 +139,30 @@ export class MatchingGameComponent {
     }
     const game: GamePoint = new GamePoint(this.currentCategory.id, this.currentCategory.name, this.pointsForCurrentRoundCount, this.currentCards, this.attemptsCount, this.successesCount);
     localStorage.setItem("gameResult", JSON.stringify(game));
+    this.pointService.addGamePlayed(
+      new GamePlayed(    
+         this.currentCategory.id,
+         3,
+         new Date(),
+         this.pointsForCurrentRoundCount ,
+         this.timeLeft,
+         180-this.timeLeft
+      ))
     this.router.navigate(['result']);
   }
 
   reportTimeLeft(newTime : number){
     this.timeLeft = newTime 
     if(newTime == 0){
-      console.log("points when time is over " + this.currentPointsCount)
-      const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPointsCount,this.currentCategory.words,this.attemptsCount,this.successesCount)
+      console.log("points when time is over " + this.pointsForCurrentRoundCount)
+      const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.pointsForCurrentRoundCount,this.currentCategory.words,this.attemptsCount,this.successesCount)
       localStorage.setItem("gameResult",JSON.stringify(game))
       this.pointService.addGamePlayed(
         new GamePlayed(    
            this.currentCategory.id,
            3,
            new Date(),
-           this.currentPointsCount,
+           this.pointsForCurrentRoundCount,
            0,
            180
         ))

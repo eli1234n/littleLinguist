@@ -43,6 +43,7 @@ export class MixedGameComponent {
     this.origin = this.mixedOrigin(this.currentCategory.words[this.level].origin)
 
   }
+
   nextWord(){
     
     console.log( this.level);

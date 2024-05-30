@@ -9,17 +9,19 @@ import { Category } from '../../shared/model/category';
 import { CategoriesService } from '../services/categories.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteCategoryDialogComponent } from '../delete-category-dialog/delete-category-dialog.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-categories-list',
   standalone: true,
   imports: [
-    CommonModule, MatTableModule, MatIconModule, MatButtonModule, RouterModule
+    CommonModule, MatTableModule, MatIconModule, MatButtonModule, RouterModule,MatProgressBarModule
   ],
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.css',
 })
 export class CategoriesListComponent implements OnInit {
+  isLaodingDone = false;
   displayedColumns: string[] = ['id', 'name', 'numOfWords', 'lastUpdateDate', 'actions'];
   dataSource : Category[] = [];
 
@@ -29,7 +31,9 @@ export class CategoriesListComponent implements OnInit {
     this.categoriesService
     .list()
     .then((result: Category[]) => {
-      this.dataSource = result
+      {this.dataSource = result;
+        this.isLaodingDone = true;
+      }
     });
   }
 

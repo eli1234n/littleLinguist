@@ -13,6 +13,7 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, CategoryCardComponent, RouterLink],
 })
 export class ChooseCategoryComponent implements OnInit {
+  isLaodingDone = false;
   openGameSelectionDialog() {
     throw new Error('Method not implemented.');
   }
@@ -20,6 +21,9 @@ export class ChooseCategoryComponent implements OnInit {
   allCategotys: Category[] = [];
   constructor(private categoryService: CategoriesService) {}
   ngOnInit(): void {
-     this.categoryService.list().then((result: Category[]) => (this.allCategotys = result));;
+    this.categoryService.list().then((result: Category[]) => {
+      this.allCategotys = result;
+      this.isLaodingDone = true;
+    });
   }
 }

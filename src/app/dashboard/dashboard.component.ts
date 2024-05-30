@@ -29,7 +29,8 @@ import { GamePlayed } from '../../shared/model/game-played';
      
       ngOnInit(): void {
      this.pointsService.getGamePoints().then((result : GamePlayed[])=>{
-    this.gameCount = result.length
+    this.gameCount = result.length;
+    
     
      }); 
       }
