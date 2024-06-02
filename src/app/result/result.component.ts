@@ -56,7 +56,7 @@ export class ResultComponent {
         (
           (this.gameDetails.successesCount / this.gameDetails.attemptsCount) *
           100
-        ).toFixed(0) || 0
+        ).toFixed(0) || 0 
       );
     }
   }

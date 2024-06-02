@@ -36,7 +36,7 @@ export class WordComponent {
         this.color = 'gray';
         break;
       default:
-        this.color = 'black'; // Set default color if status is undefined
+        this.color = 'black'; 
         break;
     }
   }

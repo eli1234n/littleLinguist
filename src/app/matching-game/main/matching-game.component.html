@@ -1,19 +1,42 @@
-<div><mat-icon id="k">timer</mat-icon>
-  <mat-icon id="o">timer</mat-icon>
-  <app-timer [totalDuration]="90" id="q" (reportTimeLeft)="reportTimeLeft($event)"></app-timer>>
- </div>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+</head>
+
+<div>
+  <div class="timer-container">
+    <mat-icon id="k">timer</mat-icon>
+    <i class="fas fa-clock timer-icon"></i>
+  </div>
+  <app-timer
+    [totalDuration]="90"
+    id="q"
+    (reportTimeLeft)="reportTimeLeft($event)"
+  ></app-timer
+  >>
+</div>
 <div class="OrderTickets">
   <div class="FlexiblePresentation">
     <mat-icon class="rightside" id="v">monetization_on</mat-icon>
     <span class="rightside">{{ pointsForCurrentRoundCount }}</span>
   </div>
   <div class="the left column">
-    <div *ngFor="let c of currentCards; let i = index" class="category-card" (click)="chooseCard('origin', i)">
+    <div
+      *ngFor="let c of currentCards; let i = index"
+      class="category-card"
+      (click)="chooseCard('origin', i)"
+    >
       <app-word [value]="c.origin" [wordStatus]="originStatus[i]"></app-word>
     </div>
   </div>
   <div class="the right column">
-    <div *ngFor="let c of shuffleTarget; let i = index" class="category-card" (click)="chooseCard('target', i)">
+    <div
+      *ngFor="let c of shuffleTarget; let i = index"
+      class="category-card"
+      (click)="chooseCard('target', i)"
+    >
       <app-word [value]="c" [wordStatus]="targetStatus[i]"></app-word>
     </div>
   </div>

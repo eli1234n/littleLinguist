@@ -4,12 +4,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
   />
 </head>
-<head>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
-</head>
 <body>
   <div>
     <h1 id="y">
@@ -41,8 +35,19 @@
         <p>{{ timeGame }}%</p>
         <p>Game Completed On Time</p>
       </div>
+      <div class="most-played-category">
+        <i class="fas fa-gamepad icon"></i>
+        <p>The type of game with the highest average score :</p>
+        <p>{{ typeGame }}</p>
+      </div>
+      <div class="highest-score-game">
+        <p>Category that played the most :</p>
+        <p>{{ categoryPlay }}</p>
+        <h1></h1>
+        <i class="fas fa-child child-icon"></i>
+        <i class="fas fa-dog dog-icon"></i>
+      </div>
     </div>
-
     <h1></h1>
     <button [routerLink]="['/choose']" id="b">New Game</button>
     <i class="fas fa-dice icon icon-dice"></i>

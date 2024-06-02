@@ -19,11 +19,14 @@ import { GamePlayed } from '../../shared/model/game-played';
 
 
   export class DashboardComponent { 
-    gameCount = 3
-    points = 5
-    averageTime = 1.6
-    hoursPlay = 40
-    timeGame = 88
+    gameCount = 32
+    points = 102
+    averageTime = 1.1
+    hoursPlay = 41
+    timeGame = 89
+    categoryPlay = 'School'
+    typeGame = 'Matching Game'
+    
     
     constructor(private pointsService : PointsService ){
     

@@ -15,91 +15,99 @@ import { GamePlayed } from '../../shared/model/game-played';
 @Component({
   selector: 'app-mixed-game',
   standalone: true,
-  imports: [CommonModule,MatProgressBarModule,MatIconModule,TimerComponent],
+  imports: [CommonModule, MatProgressBarModule, MatIconModule, TimerComponent],
   templateUrl: './mixed-game.component.html',
-  styleUrl: './mixed-game.component.css'
+  styleUrl: './mixed-game.component.css',
 })
 export class MixedGameComponent {
-  
-  constructor(private dialogService : MatDialog,private router:Router , private pointService : PointsService){}
-  
-  currentCategory:Category=new Category('','',Language.English,Language.Hebrew);
-  level:number = 0
-  origin:string[]=[]
-  target:string = ''
-  inputValue:string = ''
+  constructor(
+    private dialogService: MatDialog,
+    private router: Router,
+    private pointService: PointsService
+  ) {}
 
+  currentCategory: Category = new Category(
+    '',
+    '',
+    Language.English,
+    Language.Hebrew
+  );
+  level: number = 0;
+  origin: string[] = [];
+  target: string = '';
+  inputValue: string = '';
+  currentPoint: number = 0;
+  attemptsCount: number = 0;
+  successesCount: number = 0;
 
-  currentPoint:number = 0
-  attemptsCount:number=0
-  successesCount:number=0
-
-  timeLeft : number =0
-
+  timeLeft: number = 0;
 
   ngOnInit(): void {
-    this.currentCategory = JSON.parse(localStorage.getItem("currentCategory")||'') as Category;
-    this.target = this.currentCategory.words[this.level].target
-    this.origin = this.mixedOrigin(this.currentCategory.words[this.level].origin)
-
+    this.currentCategory = JSON.parse(
+      localStorage.getItem('currentCategory') || ''
+    ) as Category;
+    this.target = this.currentCategory.words[this.level].target;
+    this.origin = this.mixedOrigin(
+      this.currentCategory.words[this.level].origin
+    );
   }
 
-  nextWord(){
-    
-    console.log( this.level);
+  nextWord() {
+    console.log(this.level);
     console.log(this.currentCategory.words);
     console.log(this.currentCategory.words.length);
-    
-    
-    if(this.currentCategory.words.length > this.level){
 
-      if(this.inputValue === this.currentCategory.words[this.level].origin){
-        this.dialogService.open(DialogComponent,{data:true});
-        this.currentCategory.words[this.level].guess = 'true'
-        this.successesCount += 1
-        this.attemptsCount += 1
-        this.currentPoint += (100 / this.currentCategory.words.length)
+    if (this.currentCategory.words.length > this.level) {
+      if (this.inputValue === this.currentCategory.words[this.level].origin) {
+        this.dialogService.open(DialogComponent, { data: true });
+        this.currentCategory.words[this.level].guess = 'true';
+        this.successesCount += 1;
+        this.attemptsCount += 1;
+        this.currentPoint += 100 / this.currentCategory.words.length;
+      } else {
+        this.dialogService.open(DialogComponent, { data: false });
+        this.currentCategory.words[this.level].guess = 'false';
+        this.attemptsCount += 1;
       }
-      else{
-        this.dialogService.open(DialogComponent,{data:false});
-        this.currentCategory.words[this.level].guess = 'false'
-        this.attemptsCount += 1
-        
-      }
-      this.resetValue()
+      this.resetValue();
 
-      if(this.currentCategory.words.length > this.level+1){
-        this.target = this.currentCategory.words[this.level+1].target
-        this.origin = this.mixedOrigin(this.currentCategory.words[this.level+1].origin)
-      }
-      else{
-        const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPoint,this.currentCategory.words,this.attemptsCount,this.successesCount)
-        localStorage.setItem("gameResult",JSON.stringify(game))
+      if (this.currentCategory.words.length > this.level + 1) {
+        this.target = this.currentCategory.words[this.level + 1].target;
+        this.origin = this.mixedOrigin(
+          this.currentCategory.words[this.level + 1].origin
+        );
+      } else {
+        const game: GamePoint = new GamePoint(
+          this.currentCategory.id,
+          this.currentCategory.name,
+          this.currentPoint,
+          this.currentCategory.words,
+          this.attemptsCount,
+          this.successesCount
+        );
+        localStorage.setItem('gameResult', JSON.stringify(game));
         this.pointService.addGamePlayed(
-          new GamePlayed(    
-             this.currentCategory.id,
-             2,
-             new Date(),
-             this.currentPoint,
-             this.timeLeft,
-             180 - this.timeLeft
-          ))
-        this.router.navigate(['resultmixedgame'])
+          new GamePlayed(
+            this.currentCategory.id,
+            2,
+            new Date(),
+            this.currentPoint,
+            this.timeLeft,
+            180 - this.timeLeft
+          )
+        );
+        this.router.navigate(['resultmixedgame']);
       }
-      this.level+=1
-      
+      this.level += 1;
     }
-    
-
   }
 
   handleChange(event: Event) {
-    this.inputValue=(event.target as HTMLInputElement).value;
+    this.inputValue = (event.target as HTMLInputElement).value;
   }
-  resetValue(){
-    this.inputValue = ''
+  resetValue() {
+    this.inputValue = '';
   }
-
 
   shuffleArray(array: string[]) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -108,13 +116,11 @@ export class MixedGameComponent {
     }
     return array;
   }
-  
-  
-  mixedOrigin(origin:string){
+
+  mixedOrigin(origin: string) {
     const characters = origin.split('');
     const randomizedArray = this.shuffleArray(characters);
     return randomizedArray;
-
   }
 
   calculateProgress(): number {
@@ -125,23 +131,30 @@ export class MixedGameComponent {
     return progress;
   }
 
-  reportTimeLeft(newTime : number){
-    this.timeLeft = newTime 
-    if(newTime == 0){
-      console.log("points when time is over " + this.currentPoint)
-      const game : GamePoint = new GamePoint(this.currentCategory.id,this.currentCategory.name,this.currentPoint,this.currentCategory.words,this.attemptsCount,this.successesCount)
-      localStorage.setItem("gameResult",JSON.stringify(game))
+  reportTimeLeft(newTime: number) {
+    this.timeLeft = newTime;
+    if (newTime == 0) {
+      console.log('points when time is over ' + this.currentPoint);
+      const game: GamePoint = new GamePoint(
+        this.currentCategory.id,
+        this.currentCategory.name,
+        this.currentPoint,
+        this.currentCategory.words,
+        this.attemptsCount,
+        this.successesCount
+      );
+      localStorage.setItem('gameResult', JSON.stringify(game));
       this.pointService.addGamePlayed(
-        new GamePlayed(    
-           this.currentCategory.id,
-           2,
-           new Date(),
-           this.currentPoint,
-           0,
-           180
-        ))
-      this.router.navigate(['resultmixedgame'])
+        new GamePlayed(
+          this.currentCategory.id,
+          2,
+          new Date(),
+          this.currentPoint,
+          0,
+          180
+        )
+      );
+      this.router.navigate(['resultmixedgame']);
     }
   }
-
 }
