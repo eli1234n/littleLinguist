@@ -142,11 +142,11 @@ export class MatchingGameComponent {
     this.pointService.addGamePlayed(
       new GamePlayed(    
          this.currentCategory.id,
-         3,
+         1,
          new Date(),
          this.pointsForCurrentRoundCount ,
          this.timeLeft,
-         180-this.timeLeft
+         90-this.timeLeft
       ))
     this.router.navigate(['result']);
   }
@@ -160,11 +160,11 @@ export class MatchingGameComponent {
       this.pointService.addGamePlayed(
         new GamePlayed(    
            this.currentCategory.id,
-           3,
+           1,
            new Date(),
            this.pointsForCurrentRoundCount,
            0,
-           180
+           90
         ))
       this.router.navigate(['result'])
     }

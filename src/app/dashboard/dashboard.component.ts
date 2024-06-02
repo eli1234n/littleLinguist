@@ -19,9 +19,11 @@ import { GamePlayed } from '../../shared/model/game-played';
 
 
   export class DashboardComponent { 
-    gameCount = 0
-    points = 0
-    averageTime = 0
+    gameCount = 3
+    points = 5
+    averageTime = 1.6
+    hoursPlay = 40
+    timeGame = 88
     
     constructor(private pointsService : PointsService ){
     
@@ -30,11 +32,7 @@ import { GamePlayed } from '../../shared/model/game-played';
       ngOnInit(): void {
      this.pointsService.getGamePoints().then((result : GamePlayed[])=>{
     this.gameCount = result.length;
-    
-    
      }); 
       }
-     
     }
     
-

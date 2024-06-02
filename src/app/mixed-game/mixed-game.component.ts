@@ -78,7 +78,7 @@ export class MixedGameComponent {
         this.pointService.addGamePlayed(
           new GamePlayed(    
              this.currentCategory.id,
-             3,
+             2,
              new Date(),
              this.currentPoint,
              this.timeLeft,
@@ -134,7 +134,7 @@ export class MixedGameComponent {
       this.pointService.addGamePlayed(
         new GamePlayed(    
            this.currentCategory.id,
-           3,
+           2,
            new Date(),
            this.currentPoint,
            0,

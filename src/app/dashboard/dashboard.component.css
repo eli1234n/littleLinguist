@@ -7,22 +7,23 @@ div {
   color: #9a0bdc;
   margin-bottom: 40px;
   position: relative;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   animation: fadeInDown 5s ease;
 }
 
 @keyframes fadeInDown {
   from {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-#z, #a {
+#z,
+#a {
   display: inline-block;
   background-color: #e4c5e0;
   border-radius: 20px;
@@ -31,7 +32,7 @@ div {
   margin: 20px;
   font-size: 35px;
   color: #a10ae7;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   width: 250px;
   animation: fadeInUp 3s ease;
   position: relative;
@@ -39,15 +40,14 @@ div {
 
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 .icon {
   font-size: 50px;
@@ -64,7 +64,7 @@ div {
 }
 
 .icon-trophy {
-  color: rgb(103, 218, 103)
+  color: rgb(10, 236, 29);
 }
 
 .icon-dice {
@@ -73,20 +73,21 @@ div {
 }
 
 @keyframes bounce {
-  0%, 100% {
-      transform: translateY(0);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
 @keyframes rotate {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -108,13 +109,15 @@ div {
 
 @keyframes star {
   0% {
-      transform: translateY(0) translateX(0) scale(1);
+    transform: translateY(0) translateX(0) scale(1);
   }
   50% {
-      transform: translateY(calc(100vh + 50px)) translateX(calc(100vw + 50px)) scale(0);
+    transform: translateY(calc(100vh + 50px)) translateX(calc(100vw + 50px))
+      scale(0);
   }
   100% {
-      transform: translateY(calc(100vh + 50px)) translateX(calc(100vw + 50px)) scale(0);
+    transform: translateY(calc(100vh + 50px)) translateX(calc(100vw + 50px))
+      scale(0);
   }
 }
 
@@ -141,17 +144,128 @@ button:active {
   transform: scale(0.9);
 }
 
-
 @keyframes pulse {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   50% {
-      transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  animation: backgroundChange 5s infinite alternate;
+}
 
+@keyframes backgroundChange {
+  0% {
+    background: linear-gradient(45deg, #ff9a9e, #792fce);
+  }
+  33% {
+    background: linear-gradient(45deg, #c2cd26, #e581c9);
+  }
+  66% {
+    background: linear-gradient(45deg, #fad0c4, #ffd1ff);
+  }
+  100% {
+    background: linear-gradient(45deg, #ffecd2, #fcb69f);
+  }
+}
+
+.summary-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.summary-box {
+  background-color: rgba(11, 62, 227, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(215, 3, 3, 0.2);
+  padding: 20px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.summary-box p {
+  font-size: 33px;
+  color: #13ecd3;
+  margin: 10px 0 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.summary-box i {
+  font-size: 75px;
+  margin-bottom: 10px;
+}
+
+#b i {
+  color: #ff6347;
+  animation: spin 3s infinite linear;
+}
+
+#i i {
+  color: #ffd700;
+  animation: bounce 2s infinite;
+}
+
+#h i {
+  color: #24dd2a;
+  animation: shake 1s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");

@@ -1,33 +1,61 @@
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+</head>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 </head>
 <body>
-    <div>
-        <h1 id="y">
-            You're learning: <i class="fas fa-gamepad icon icon-rotate icon-gamepad"></i>
-        </h1>
-        <div id="a">
-            <i class="fas fa-star icon icon-star"></i>
-            {{points}} Points
-        </div>
-        <div id="z">
-            <i class="fas fa-trophy icon icon-trophy"></i>
-            {{gameCount}} Games    
-        </div>
-        <h1></h1>
-        <button [routerLink]="['/choose']" id="b">New Game</button>
-       <i class="fas fa-dice icon icon-dice"></i>
+  <div>
+    <h1 id="y">
+      You're learning:
+      <i class="fas fa-gamepad icon icon-rotate icon-gamepad"></i>
+    </h1>
+    <div id="a">
+      <i class="fas fa-star icon icon-star"></i>
+      {{ points }} Points
+    </div>
+    <div id="z">
+      <i class="fas fa-trophy icon icon-trophy"></i>
+      {{ gameCount }} Games
     </div>
 
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
+    <div class="summary-container">
+      <div id="b" class="summary-box">
+        <i class="fas fa-clock"></i>
+        <p>{{ averageTime }}m</p>
+        <p>Average Time Duration</p>
+      </div>
+      <div id="i" class="summary-box">
+        <i class="fas fa-hourglass-half"></i>
+        <p>{{ hoursPlay }}</p>
+        <p>Hours Played</p>
+      </div>
+      <div id="h" class="summary-box">
+        <i class="fas fa-check-circle"></i>
+        <p>{{ timeGame }}%</p>
+        <p>Game Completed On Time</p>
+      </div>
+    </div>
 
+    <h1></h1>
+    <button [routerLink]="['/choose']" id="b">New Game</button>
+    <i class="fas fa-dice icon icon-dice"></i>
+  </div>
+
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
 </body>
