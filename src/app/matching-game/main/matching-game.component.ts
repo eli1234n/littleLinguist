@@ -53,8 +53,8 @@ export class MatchingGameComponent {
     } else {
       alert('ERROR , choose a game with at least 5 words');
     }
+    
   }
-
 
 
   choose5words(): void {
