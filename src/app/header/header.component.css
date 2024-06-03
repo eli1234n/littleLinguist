@@ -8,7 +8,7 @@
   justify-content: space-between; 
   align-items: center; 
   background-color: #1abad6; 
-  color: rgb(213, 35, 154);
+  color: rgb(232, 9, 232);
   padding: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -24,14 +24,14 @@
 
 
 #a:hover {
-  background-color: #e657d0;
+  background-color: #e6d357;
 }
 
 
  #a {
-  color: #0bed16;
+  color: #da0bed;
 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #s:hover {
@@ -49,4 +49,41 @@
   color: rgb(115, 223, 21);
   font-size: 24px;
   
+}
+
+.icon {
+  font-size: 30px;
+  margin: 0 10px;
+  animation: bounce 2s infinite;
+}
+
+.icon-dice {
+  color: #ecbc5d;
+ 
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.icon-gamepad {
+  color: #e13812;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-rotate {
+  animation: rotate 2s linear infinite;
 }

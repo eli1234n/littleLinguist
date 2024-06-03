@@ -4,18 +4,30 @@
 
 <div>
   <head>
+    <link />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    />
   </head>
-  <h1 class="center" id="l">Lets play</h1>
+  <h1 class="center" id="l">
+    <span>L</span><span>E</span><span>T</span><span>S</span> <span>P</span
+    ><span>L</span><span>A</span><span>Y</span>
+  </h1>
   <div class="container">
     <div *ngFor="let c of allCategotys" class="categoty-card">
       <app-category-card [currentcategory]="c"></app-category-card>
     </div>
     <body>
-      <button [routerLink]="['/dashboard']" id="b">Dashboard screen</button>
+      <button [routerLink]="['/dashboard']" id="b">
+        <i class="fas fa-tv"></i> Dashboard screen
+      </button>
     </body>
   </div>
 </div>

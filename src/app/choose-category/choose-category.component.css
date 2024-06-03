@@ -219,3 +219,31 @@
 #q span {
   animation: fadeInOut 5s infinite;
 }
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.center {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.center span {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+.center span:nth-child(1) { animation-delay: 0s; color: #ff6b6b; }
+.center span:nth-child(2) { animation-delay: 0.1s; color: #ffcc5c; }
+.center span:nth-child(3) { animation-delay: 0.2s; color: #88d8b0; }
+.center span:nth-child(4) { animation-delay: 0.3s; color: #6a0572; }
+.center span:nth-child(5) { animation-delay: 0.4s; color: #ff6b6b; }
+.center span:nth-child(6) { animation-delay: 0.5s; color: #ffcc5c; }
+.center span:nth-child(7) { animation-delay: 0.6s; color: #88d8b0; }
+.center span:nth-child(8) { animation-delay: 0.7s; color: #6a0572; }
