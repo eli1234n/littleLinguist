@@ -20,7 +20,7 @@ import { filter } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  gameCount = 43;
+  gameCount = 44;
   points = 110;
   averageTime = 1.1;
   hoursPlay = 37;
@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   resetValues(): void {
-    this.gameCount = 43;
+    this.gameCount = 44;
     this.points = 110;
     this.averageTime = 1.1;
     this.hoursPlay = 37;

@@ -9,18 +9,18 @@
 .FlexiblePresentation {
   display: flex;
   align-items: center;
-  color: rgb(255, 191, 0);
+  color: rgb(34, 28, 217);
   
   
 }
 #q{
   color: #de8212;
-  background-color: #56de12;
+  background-color: #23de12;
 }
 
 #k{
-  color: #de8212;
-  background-color: #56de12;
+  color: #de7f12;
+  background-color: #de124c;
 }
 
 .left.column {
@@ -37,8 +37,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: rgb(157, 9, 215);
-  background-color: rgba(234, 224, 23, 0.548);
+  color: rgb(105, 215, 9);
+  background-color: rgba(23, 234, 58, 0.548);
   font-size: medium;
 }
 
@@ -61,7 +61,7 @@ app-word {
 }
 
 .right.column:hover {
-  background-color: #c1d41b;
+  background-color: #1bd4a3;
 }
 
 .left.column:hover {
@@ -146,7 +146,7 @@ body {
 
 .timer-container .timer-icon {
   font-size: 3rem;
-  color: #e1b00e;
+  color: #c10ee1;
   margin-bottom: 10px;
   animation: bounce 2s infinite;
 }

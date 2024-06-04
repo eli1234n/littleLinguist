@@ -7,8 +7,8 @@
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  background-color: #1abad6; 
-  color: rgb(232, 9, 232);
+  background-color: hwb(210 47% 2%); 
+  color: rgb(232, 9, 28);
   padding: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -29,7 +29,7 @@
 
 
  #a {
-  color: #da0bed;
+  color: #0bed2d;
 
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -58,7 +58,7 @@
 }
 
 .icon-dice {
-  color: #ecbc5d;
+  color: #9808eb;
  
 }
 @keyframes bounce {
@@ -72,7 +72,7 @@
 }
 
 .icon-gamepad {
-  color: #e13812;
+  color: #3112e1;
 }
 
 @keyframes rotate {

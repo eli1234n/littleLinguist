@@ -47,7 +47,7 @@ export class ResultComponent {
       this.gradeStatus = grade.Fail;
     }
   }
-  
+
   successRate() {
     if (this.gameDetails.attemptsCount == 0) {
       return 0;
@@ -56,7 +56,7 @@ export class ResultComponent {
         (
           (this.gameDetails.successesCount / this.gameDetails.attemptsCount) *
           100
-        ).toFixed(0) || 0 
+        ).toFixed(0) || 0
       );
     }
   }

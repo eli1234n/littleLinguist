@@ -19,7 +19,7 @@
   margin: 20px;
   border-radius: 20px;
   box-shadow: 20px 20px 20px rgba(18, 44, 173, 0.1);
-  background-color: #eb0bdc;
+  background-color: #f59ae9;
   transition: all 0.5s ease;
 }
 
@@ -55,9 +55,9 @@
   display: inline-block;
   padding: 12px 50px;
   font-size: 18px;
-  color: #76f308;
+  color: #1e1f21;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: #4481e3;
+  background-color: #21e1a4;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -168,7 +168,7 @@
   content: "";
   width: 40px;
   height: 40px;
-  border: 5px solid #eadf17;
+  border: 5px solid #2d08e4;
   border-top: 5px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -179,7 +179,9 @@
   display: inline-block;
   animation: bounce 2s infinite;
   margin: 0 5px;
-  color: #8b07ea;
+  color: #31c31e;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @keyframes fadeInOut {
@@ -252,3 +254,4 @@
 #l .space {
   width: 10px; 
 }
+

@@ -76,7 +76,7 @@ table.mat-table {
   content: '';
   width: 40px;
   height: 40px;
-  border: 5px solid #eadf17;
+  border: 5px solid #17ea37;
   border-top: 5px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -87,7 +87,9 @@ table.mat-table {
   display: inline-block;
   animation: bounce 2s infinite;
   margin: 0 5px;
-  color: #8b07ea;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+  color: #2907ea;
 }
 
 
@@ -127,3 +129,4 @@ table.mat-table {
 #l span {
   animation: fadeInOut 5s infinite;
 }
+

@@ -7,7 +7,7 @@
   margin-right: auto;
   width: 50%;
   border: 15px solid rgb(175, 14, 215);
-  background-color: rgb(235, 163, 30);
+  background-color: rgba(220, 127, 169, 0.712);
   scroll-behavior: auto;
 }
 .title {
@@ -38,7 +38,7 @@
 
 #w {
   font-size: 16px;
-  color: #f6065e;
+  color: #6c0fd6;
   margin-bottom: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -47,12 +47,16 @@ td {
   padding: 5px 10px;
 }
 
-#g,
 #k {
-  font-size: 24px;
-  margin-right: 5px;
-  color: #1de674;
+  color: rgb(22, 142, 22);
+  animation: checkAnim 1s infinite;
 }
+
+#g {
+  color: red;
+  animation: clearAnim 1s infinite;
+}
+
 
 #c {
   display: block;
@@ -80,7 +84,7 @@ td {
 
 #d {
   font-size: 18px;
-  color: #e6f605;
+  color: #dc0ce7;
   font-style: italic;
 }
 
@@ -164,3 +168,58 @@ td {
 }
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+@keyframes flyEmojis {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+.emoji {
+  position: absolute;
+  bottom: 0;
+  font-size: 4em;
+  animation: flyEmojis 5s infinite;
+}
+
+.emoji:nth-child(2) {
+  animation-duration: 7s;
+}
+.emoji:nth-child(3) {
+  animation-duration: 6s;
+}
+.emoji:nth-child(4) {
+  animation-duration: 8s;
+}
+.emoji:nth-child(5) {
+  animation-duration: 9s;
+}
+
+.emoji.right {
+  right: 0;
+  animation: flyEmojisRight 5s infinite;
+}
+
+@keyframes flyEmojisRight {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.emoji.right:nth-child(6) {
+  animation-duration: 6s;
+}
+.emoji.right:nth-child(7) {
+  animation-duration: 7s;
+}
+.emoji.right:nth-child(8) {
+  animation-duration: 8s;
+}
+.emoji.right:nth-child(9) {
+  animation-duration: 9s;
+}
